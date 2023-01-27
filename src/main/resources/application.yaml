@@ -1,0 +1,30 @@
+server:
+  port: 8080
+spring:
+  cloud:
+    config:
+      server:
+        jdbc:
+          sql: SELECT k, v FROM properties AS p WHERE p.application = ? AND p.profile = ? AND p.label = ?
+  datasource:
+    url: jdbc:h2:mem:configurations
+    driverClassName: org.h2.Driver
+    username: admin
+    password: admin
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    open-in-view: false
+    properties:
+      jakarta:
+        persistence:
+          sharedCache:
+            mode: ENABLE_SELECTIVE
+  h2:
+    console:
+      enabled: true
+  profiles:
+    include: jdbc
+logging:
+  level:
+    liquibase:
+      executor: DEBUG

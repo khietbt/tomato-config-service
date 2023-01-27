@@ -1,0 +1,67 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20230127_create_the_properties_table-01
+      author: khietbt
+      createTable:
+        tableName: properties
+        columns:
+          - column:
+              name: id
+              type: int
+              autoIncrement: true
+              constraints:
+                primaryKey: true
+                nullable: false
+          - column:
+              name: application
+              type: varchar(256)
+              constraints:
+                nullable: false
+          - column:
+              name: profile
+              type: varchar(256)
+              constraints:
+                nullable: false
+          - column:
+              name: label
+              type: varchar(256)
+              constraints:
+                nullable: false
+          - column:
+              name: k
+              type: varchar(1024)
+              constraints:
+                nullable: false
+          - column:
+              name: v
+              type: varchar(4096)
+          - column:
+              name: created_at
+              type: datetime(6)
+              defaultValue: now()
+          - column:
+              name: created_by
+              type: varchar(256)
+          - column:
+              name: updated_at
+              type: datetime(6)
+              defaultValue: now()
+          - column:
+              name: updated_by
+              type: varchar(256)
+  - changeSet:
+      id: 20230127_create_the_properties_table-02
+      author: khietbt
+      createIndex:
+        indexName: idx_properties_01
+        tableName: properties
+        unique: true
+        columns:
+          - column:
+              name: application
+          - column:
+              name: profile
+          - column:
+              name: label
+          - column:
+              name: k

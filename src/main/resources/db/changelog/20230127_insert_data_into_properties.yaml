@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20230127_insert_data_into_properties-01
+      author: khietbt
+      insert:
+        tableName: properties
+        columns:
+          - column:
+              name: application
+              value: tomato-user-service
+          - column:
+              name: profile
+              value: dev
+          - column:
+              name: label
+              value: master
+          - column:
+              name: k
+              value: SERVER_PORT
+          - column:
+              name: v
+              value: 8081
+          - column:
+              name: created_by
+              value: khietbt
+          - column:
+              name: updated_by
+              value: khietbt

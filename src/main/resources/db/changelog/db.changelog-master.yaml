@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/20230127_create_the_properties_table.yaml
+  - include:
+      file: db/changelog/20230127_insert_data_into_properties.yaml
