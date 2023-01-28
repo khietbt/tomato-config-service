@@ -14,22 +14,22 @@ databaseChangeLog:
                 nullable: false
           - column:
               name: application
-              type: varchar(256)
+              type: varchar(128)
               constraints:
                 nullable: false
           - column:
               name: profile
-              type: varchar(256)
+              type: varchar(32)
               constraints:
                 nullable: false
           - column:
               name: label
-              type: varchar(256)
+              type: varchar(32)
               constraints:
                 nullable: false
           - column:
               name: k
-              type: varchar(1024)
+              type: varchar(128)
               constraints:
                 nullable: false
           - column:
@@ -38,14 +38,14 @@ databaseChangeLog:
           - column:
               name: created_at
               type: datetime(6)
-              defaultValue: now()
+              defaultValueComputed: current_timestamp(6)
           - column:
               name: created_by
               type: varchar(256)
           - column:
               name: updated_at
               type: datetime(6)
-              defaultValue: now()
+              defaultValueComputed: current_timestamp(6)
           - column:
               name: updated_by
               type: varchar(256)
