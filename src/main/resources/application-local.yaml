@@ -1,0 +1,9 @@
+SERVER_PORT: 8080
+SPRING_DATASOURCE_DRIVER_CLASS_NAME: org.h2.Driver
+SPRING_DATASOURCE_PASSWORD: ${spring.application.name}-database-admin
+SPRING_DATASOURCE_URL: jdbc:h2:mem:configurations
+SPRING_DATASOURCE_USERNAME: ${spring.application.name}-database-admin
+SPRING_H2_CONSOLE_ENABLED: true
+SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.H2Dialect
+SPRING_SECURITY_USER_NAME: ${spring.application.name}-admin
+SPRING_SECURITY_USER_PASSWORD: ${spring.application.name}-admin

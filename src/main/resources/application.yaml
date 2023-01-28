@@ -1,18 +1,24 @@
 server:
-  port: 8080
+  port: ${SERVER_PORT}
 spring:
+  application:
+    name: tomato-config-service
   cloud:
     config:
       server:
         jdbc:
           sql: SELECT k, v FROM properties AS p WHERE p.application = ? AND p.profile = ? AND p.label = ?
   datasource:
-    url: jdbc:h2:mem:configurations
-    driverClassName: org.h2.Driver
-    username: admin
-    password: admin
+    url: ${SPRING_DATASOURCE_URL}
+    driverClassName: ${SPRING_DATASOURCE_DRIVER_CLASS_NAME}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+  security:
+    user:
+      name: ${SPRING_SECURITY_USER_NAME}
+      password: ${SPRING_SECURITY_USER_PASSWORD}
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
+    database-platform: ${SPRING_JPA_DATABASE_PLATFORM}
     open-in-view: false
     properties:
       jakarta:
@@ -21,9 +27,8 @@ spring:
             mode: ENABLE_SELECTIVE
   h2:
     console:
-      enabled: true
-  profiles:
-    include: jdbc
+      enabled: ${SPRING_H2_CONSOLE_ENABLED}
+#-----------------------------------------------------------------------------------------------------------------------
 logging:
   level:
     liquibase:
