@@ -3,6 +3,8 @@ server:
 spring:
   application:
     name: tomato-config-service
+  config:
+    import: optional:configserver:${CONFIG_SERVER_URI:8080}/
   cloud:
     config:
       server:
@@ -13,10 +15,10 @@ spring:
     driverClassName: ${SPRING_DATASOURCE_DRIVER_CLASS_NAME}
     username: ${SPRING_DATASOURCE_USERNAME}
     password: ${SPRING_DATASOURCE_PASSWORD}
-  security:
-    user:
-      name: ${SPRING_SECURITY_USER_NAME}
-      password: ${SPRING_SECURITY_USER_PASSWORD}
+  #  security:
+  #    user:
+  #      name: ${SPRING_SECURITY_USER_NAME}
+  #      password: ${SPRING_SECURITY_USER_PASSWORD}
   jpa:
     database-platform: ${SPRING_JPA_DATABASE_PLATFORM}
     open-in-view: false
@@ -33,3 +35,14 @@ logging:
   level:
     liquibase:
       executor: DEBUG
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: ${EUREKA_CLIENT_SERVICE_URL_DEFAULT_ZONE}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
