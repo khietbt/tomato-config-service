@@ -1,4 +1,4 @@
-package io.github.khietbt.TomatoConfigService;
+package io.github.khietbt.tomatoconfigservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

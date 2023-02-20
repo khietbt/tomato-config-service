@@ -85,7 +85,7 @@
                 <version>${spring-boot.version}</version>
                 <configuration>
                     <layout>JAR</layout>
-                    <mainClass>io.github.khietbt.TomatoConfigService.TomatoConfigServiceApplication</mainClass>
+                    <mainClass>io.github.khietbt.tomatoconfigservice.TomatoConfigServiceApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>
